@@ -1,19 +1,23 @@
-// File: test/com/cloudbees/trainbooking/api/UserSeatApiTest.java
-
 package test.com.cloudbees.trainbooking.api;
 
-import src.com.cloudbees.trainbooking.model.User;
-import src.com.cloudbees.trainbooking.api.UserSeatApi;
-import src.com.cloudbees.trainbooking.model.TrainSection;
+import com.cloudbees.trainbooking.model.User;
+import com.cloudbees.trainbooking.model.TrainSection;
+import com.cloudbees.trainbooking.api.UserSeatApi;
 
 import org.junit.jupiter.api.Test;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UserSeatApiTest {
 
     @Test
     public void testViewUsersAndSeats() {
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
         TrainSection trainSection = new TrainSection();
         UserSeatApi userSeatApi = new UserSeatApi(trainSection);
 
@@ -25,10 +29,8 @@ public class UserSeatApiTest {
 
         List<User> seatsInSectionA = trainSection.getSeatsInSection("A");
 
-        // Assuming you have a method to capture console output for testing
-        // For simplicity, this example checks if the expected output is present in the console output
         userSeatApi.viewUsersAndSeats("A");
-        assertEquals("John Doe", seatsInSectionA.get(0).getFullName());
-        assertEquals("Jane Smith", seatsInSectionA.get(1).getFullName());
+
+        assertEquals("John Doe - Seat: A\nJane Smith - Seat: A\n", outContent.toString());
     }
 }

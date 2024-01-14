@@ -1,11 +1,9 @@
-// File: test/com/cloudbees/trainbooking/model/TrainSectionTest.java
-
 package test.com.cloudbees.trainbooking.model;
 
-import org.junit.jupiter.api.Test;
+import com.cloudbees.trainbooking.model.TrainSection;
+import com.cloudbees.trainbooking.model.User;
 
-import src.com.cloudbees.trainbooking.model.TrainSection;
-import src.com.cloudbees.trainbooking.model.User;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;

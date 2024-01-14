@@ -1,20 +1,19 @@
-package src.com.cloudbees.trainbooking.api;
+package com.cloudbees.trainbooking.api;
 
-import src.com.cloudbees.trainbooking.model.User;
-import src.com.cloudbees.trainbooking.model.TrainSection;
+import com.cloudbees.trainbooking.model.TrainSection;
+import com.cloudbees.trainbooking.model.User;
 
 public class ModifySeatApi {
-    // Properties
+
     private TrainSection trainSection;
 
-    // Constructor
     public ModifySeatApi(TrainSection trainSection) {
         this.trainSection = trainSection;
     }
 
-    // Methods
-    public void modifyUserSeat(User user, String newSection) {
-        // Logic to modify a user's seat to the specified section
-        trainSection.allocateUserToSection(user, newSection);
+    public void modifyUserSeat(String userEmail, String seat) {
+        User user = trainSection.getUserByEmail(userEmail);
+        trainSection.removeUser(user);
+        trainSection.allocateUserToSection(user, seat);
     }
 }

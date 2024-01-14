@@ -1,7 +1,7 @@
-package src.com.cloudbees.trainbooking.api;
+package com.cloudbees.trainbooking.api;
 
-import src.com.cloudbees.trainbooking.model.User;
-import src.com.cloudbees.trainbooking.model.TrainSection;
+import com.cloudbees.trainbooking.model.User;
+import com.cloudbees.trainbooking.model.TrainSection;
 
 import java.util.List;
 
@@ -16,12 +16,11 @@ public class UserSeatApi {
 
     // Methods
     public void viewUsersAndSeats(String section) {
-        // Logic to view users and their allocated seats in the specified section
+        // Logic to view users and their seats in the specified section
         List<User> seatsInSection = trainSection.getSeatsInSection(section);
-
-        System.out.println("Section " + section + " Seats:");
+        System.out.println("Users and Seats in Section " + section + ":");
         for (User user : seatsInSection) {
-            System.out.println("Seat: " + user.getFullName() + " - Email: " + user.getEmail());
+            System.out.println(user.getFullName() + " - Seat: " + section);
         }
     }
 }

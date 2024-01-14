@@ -1,4 +1,4 @@
-package src.com.cloudbees.trainbooking.model;
+package com.cloudbees.trainbooking.model;
 
 public class User {
     // Properties

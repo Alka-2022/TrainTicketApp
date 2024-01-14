@@ -1,4 +1,4 @@
-package src.com.cloudbees.trainbooking.model;
+package com.cloudbees.trainbooking.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,5 +41,24 @@ public class TrainSection {
             // Handle invalid section
             return new ArrayList<>();
         }
+    }
+
+    public User getUserByEmail(String email) {
+        for (User user : sectionASeats) {
+            if (user.getEmail().equalsIgnoreCase(email)) {
+                return user;
+            }
+        }
+        for (User user : sectionBSeats) {
+            if (user.getEmail().equalsIgnoreCase(email)) {
+                return user;
+            }
+        }
+        return null; // User not found
+    }
+
+    public void removeUser(User user) {
+        sectionASeats.remove(user);
+        sectionBSeats.remove(user);
     }
 }

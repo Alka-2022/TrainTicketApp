@@ -1,8 +1,8 @@
-package src.com.cloudbees.trainbooking.api;
+package com.cloudbees.trainbooking.api;
 
-import src.com.cloudbees.trainbooking.model.Ticket;
-import src.com.cloudbees.trainbooking.model.User;
-import src.com.cloudbees.trainbooking.model.TrainSection;
+import com.cloudbees.trainbooking.model.User;
+import com.cloudbees.trainbooking.model.Ticket;
+import com.cloudbees.trainbooking.model.TrainSection;
 
 public class TicketApi {
     // Properties
@@ -15,10 +15,9 @@ public class TicketApi {
 
     // Methods
     public Ticket purchaseTicket(User user, int price) {
-        // Assume some logic for ticket purchase
+        // Logic to purchase a ticket and allocate a seat to the user
         Ticket ticket = new Ticket(user, price);
-        // Allocate user to a section
-        trainSection.allocateUserToSection(user, "A");
+        trainSection.allocateUserToSection(user, "A"); // Assuming default section is "A"
         return ticket;
     }
 }

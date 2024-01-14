@@ -1,12 +1,14 @@
-package src.com.cloudbees.trainbooking.api;
+package com.cloudbees.trainbooking.api;
 
-import src.com.cloudbees.trainbooking.model.Ticket;
+import com.cloudbees.trainbooking.model.Ticket;
 
 public class ReceiptApi {
-    // Methods
+
     public void viewReceipt(Ticket ticket) {
-        System.out.println("Receipt for " + ticket.getUser().getFullName());
-        System.out.println("Price: $" + ticket.getPrice());
-        // Add more receipt details if needed
+        System.out.println("Receipt Details:");
+        System.out.println("From: " + ticket.getFrom());
+        System.out.println("To: " + ticket.getTo());
+        System.out.println("User: " + ticket.getUser().getFullName());
+        System.out.println("Price Paid: $" + ticket.getPrice());
     }
 }

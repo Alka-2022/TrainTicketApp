@@ -1,10 +1,8 @@
-// File: test/com/cloudbees/trainbooking/api/RemoveUserApiTest.java
-
 package test.com.cloudbees.trainbooking.api;
 
-import src.com.cloudbees.trainbooking.model.User;
-import src.com.cloudbees.trainbooking.api.RemoveUserApi;
-import src.com.cloudbees.trainbooking.model.TrainSection;
+import com.cloudbees.trainbooking.model.User;
+import com.cloudbees.trainbooking.model.TrainSection;
+import com.cloudbees.trainbooking.api.RemoveUserApi;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertNull;
